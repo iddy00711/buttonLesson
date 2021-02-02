@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: black;
+    overflow: hidden;
+}
+#word-container{
+    position: absolute;
+    top:40vh;
+    left: 12vw;
+   
+   
+}
+.letter{
+    word-spacing: 0.05rem;
+    font-family: 'Lato';
+
+    color: rgb(233, 226, 217);
+    font-size: clamp(1rem, 2.5vw, 2rem); 
+    font-weight: 600;
+    
+    animation: changeOpacity 1s linear;
+
+}
+.button{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 60vh;
+    left: 45vw;
+    border: 2px solid rgb(233, 226, 217);;
+    display: flex;
+    justify-content: center;
+    transition: 0.7s;
+    /* animation: changeOpacity 3s 10s linear; 
+     animation-iteration-count: 1; */
+    /* transition: 5s linear; */
+   
+}
+.arrow-body{
+    /* margin-left: 42%; */
+    margin-top: 5%; 
+    width: 5px;
+    height:40px;
+    transform: rotate(90deg);
+    background-color: rgb(233, 226, 217);;
+    border-radius: 9999px;
+    transition: 0.7s;
+
+}
+.arrow-body::before{
+    position: absolute;
+   
+    content: '';
+    width: 5px;
+    height:23px;
+    background-color: rgb(233, 226, 217);;
+    border-radius: 9999px;
+    transform: translateX(-6px) rotate(32deg);
+    z-index: -1;
+    transition: 0.7s;
+
+}
+.arrow-body::after{
+    position: absolute;
+   
+    content: '';
+    width: 5px;
+    height:23px;
+    background-color: rgb(233, 226, 217);;
+    border-radius: 9999px;
+    transform: translateX(6px) rotate(-32deg);
+    z-index: -1;
+    transition: 0.7s;
+
+}
+.button:hover{
+    background: rgb(233, 226, 217);;
+    box-shadow: inset 0 0 0px 1.9px black;
+    opacity: 1;
+}
+.button:hover .arrow-body, .button:hover .arrow-body::before, .button:hover .arrow-body::after{
+    background: black;
+}
+
+
+@keyframes changeOpacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
